@@ -14,8 +14,4 @@ Over the next 60 days, I'll document my learning journey with Claude and other A
 - Share my progress publicly
 - Become a better AI engineer
 
-## Progress
 
-- ✅ Day 1
-- ⏳ Day 2
-- ⏳ Day 3

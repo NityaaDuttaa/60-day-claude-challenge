@@ -8,10 +8,11 @@ Over the next 60 days, I'll document my learning journey with Claude and other A
 
 ## Goals
 
-- Learn AI more deeply
-- Improve prompt engineering
-- Build projects
-- Share my progress publicly
-- Become a better AI engineer
+- Learn AI more deeply.
+- Improve prompt engineering.
+- Build projects.
+- Share my progress publicly.
+- Become a better AI engineer.
+  
 
 

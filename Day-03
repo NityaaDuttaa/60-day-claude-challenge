@@ -1,0 +1,113 @@
+# Day 3 - Role-Based Prompting
+
+## Objective
+
+Learn how assigning different roles changes Claude's responses.
+
+---
+
+## Resources
+
+Read the provided resources on Role-Based Prompting and understood how assigning different personas influences Claude's responses.
+  
+  ---
+
+## Prompt 1 - Without Role
+
+### Prompt
+
+How can I learn AI engineering in 6 months?
+
+### Output
+
+6-month AI engineering plan:
+
+* Mo 1-2: Python + LLM API basics (prompting, function calling) + core concepts (transformers, attention)
+* Mo 3-4: Build RAG apps (embeddings, vector DBs) + agents (tool use, ReAct) + learn evals
+* Mo 5-6: Production skills (cost/latency, guardrails, deployment) + ship one strong portfolio project
+
+Key: build constantly, don't just read.
+
+
+
+---
+
+## Prompt 2 - Founder Persona
+
+### Prompt
+
+You are a successful AI startup founder who has built multiple AI products.
+
+How can I learn AI engineering in 6 months?
+
+### Output
+
+Here's how I'd do it if I were starting over:
+
+* Mo 1-2: Get fluent with LLM APIs fast — prompting, function calling, streaming. Skip deep ML theory unless you're curious; you don't need to derive backprop to ship products. Do learn how transformers/attention work at a conceptual level so you're not just cargo-culting.
+
+* Mo 3-4: Build, don't tutorial-hop. Ship a RAG app, then an agent with tool use. You'll learn more from debugging why your retrieval sucks than from any course. Start writing evals early — this is what separates people who ship reliable products from people who ship demos.
+
+* Mo 5-6: Learn production reality: cost control, latency, guardrails, observability, deployment. Then pick one real problem and build something people actually use, even if it's just 10 friends. That project is your portfolio, your interview story, and your proof you can ship.
+
+Honestly, the biggest lever: talk to users obsessively and iterate in public. The technical stuff is learnable in 6 months. Knowing what's worth building is the actual skill.
+
+---
+
+## Prompt 3 - Developer Persona
+
+### Prompt
+
+You are a senior AI software engineer experienced in Python, Machine Learning, LLMs, and production AI systems.
+
+How can I learn AI engineering in 6 months?
+
+### Output
+
+6-month plan:
+
+Mo 1-2: Python fundamentals + transformer/attention intuition + LLM API mechanics (function calling, structured outputs, streaming)
+Mo 3-4: Build RAG (embeddings, vector DBs) + agents from scratch (understand ReAct before using frameworks) + start writing evals early
+Mo 5-6: Production hardening — cost/latency optimization, guardrails, observability (LangSmith/Langfuse), real deployment (FastAPI + Docker)
+
+
+---
+
+## Comparison
+
+| Prompt Type | Observation |
+|-------------|-------------|
+| Without Role | General advice |
+| Founder | Business strategy, product thinking, execution |
+| Developer | Technical roadmap, coding, frameworks |
+
+---
+
+## Learnings
+
+- Role-Based Prompting significantly changes the quality of responses.
+- Different personas provide different perspectives.
+- Founder prompts focus on strategy.
+- Developer prompts focus on implementation.
+- Adding context leads to more relevant AI responses.
+
+---
+
+## Claude Usage Counter
+
+Installed the Claude Usage Counter extension and explored its interface.
+
+### Observations
+
+- Displays session usage.
+- Shows usage reset timer.
+- Helps monitor Claude usage efficiently.
+
+---
+
+## Screenshots
+
+- Without Role Prompt
+- Founder Prompt
+- Developer Prompt
+- Claude Usage Counter

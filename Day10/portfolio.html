@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nitya Dutta | Data & AI Enthusiast Portfolio</title>
+<meta name="description" content="Nitya Dutta - Python, Machine Learning, SQL developer from Faridabad, India. Explore projects, skills, and achievements.">
+<meta name="keywords" content="Nitya Dutta, Portfolio, Python Developer, Machine Learning, SQL, Data Analyst, Faridabad">
+<meta name="author" content="Nitya Dutta">
+<meta property="og:title" content="Nitya Dutta | Portfolio">
+<meta property="og:description" content="Python, ML & SQL developer portfolio showcasing projects and skills.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>N</text></svg>">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Poppins', 'sans-serif'] },
+        colors: {
+          brand: {
+            purple: '#8b5cf6',
+            teal: '#14b8a6',
+          }
+        },
+        animation: {
+          'fade-up': 'fadeUp 0.8s ease forwards',
+          'blink': 'blink 1s step-end infinite',
+          'float': 'float 6s ease-in-out infinite',
+        },
+        keyframes: {
+          fadeUp: { '0%': { opacity: 0, transform: 'translateY(30px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+          blink: { '50%': { opacity: 0 } },
+          float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-15px)' } },
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Poppins', sans-serif; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: linear-gradient(#8b5cf6, #14b8a6); border-radius: 10px; }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #8b5cf6, #14b8a6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gradient-bg {
+    background: linear-gradient(90deg, #8b5cf6, #14b8a6);
+  }
+  .card-hover {
+    transition: all 0.35s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.35);
+  }
+  .nav-link.active {
+    color: #14b8a6;
+  }
+  .nav-link.active::after {
+    width: 100%;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #8b5cf6, #14b8a6);
+    transition: width 0.3s ease;
+  }
+  .skill-bar-fill {
+    width: 0%;
+    transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #typing-cursor { animation: blink 1s step-end infinite; }
+  .blob {
+    filter: blur(80px);
+  }
+</style>
+</head>
+<body class="bg-white dark:bg-[#0a0a12] text-slate-800 dark:text-slate-200 transition-colors duration-500 overflow-x-hidden">
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/70 dark:bg-[#0a0a12]/70 border-b border-slate-200/50 dark:border-white/5 transition-colors duration-500">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#home" class="text-xl font-bold gradient-text">ND.</a>
+
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#home" class="nav-link relative active">Home</a>
+      <a href="#about" class="nav-link relative">About</a>
+      <a href="#skills" class="nav-link relative">Skills</a>
+      <a href="#projects" class="nav-link relative">Projects</a>
+      <a href="#achievements" class="nav-link relative">Achievements</a>
+      <a href="#contact" class="nav-link relative">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-white/10 hover:scale-110 transition">
+        <svg id="icon-sun" class="w-5 h-5 hidden text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        <svg id="icon-moon" class="w-5 h-5 text-indigo-400" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+      </button>
+      <button id="menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden flex-col gap-1 px-6 pb-4 bg-white/95 dark:bg-[#0a0a12]/95">
+    <a href="#home" class="nav-link py-2">Home</a>
+    <a href="#about" class="nav-link py-2">About</a>
+    <a href="#skills" class="nav-link py-2">Skills</a>
+    <a href="#projects" class="nav-link py-2">Projects</a>
+    <a href="#achievements" class="nav-link py-2">Achievements</a>
+    <a href="#contact" class="nav-link py-2">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-24 overflow-hidden">
+  <div class="absolute -top-20 -left-20 w-96 h-96 bg-brand-purple/30 rounded-full blob animate-float"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-teal/30 rounded-full blob animate-float" style="animation-delay:2s;"></div>
+
+  <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+    <div class="text-center md:text-left animate-fade-up">
+      <p class="text-brand-teal font-semibold tracking-widest text-sm mb-3">HELLO, I'M</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+        Nitya <span class="gradient-text">Dutta</span>
+      </h1>
+      <h2 class="text-xl md:text-2xl font-medium text-slate-500 dark:text-slate-400 mb-6 h-8">
+        <span id="typing-text"></span><span id="typing-cursor" class="text-brand-teal">|</span>
+      </h2>
+      <p class="text-slate-500 dark:text-slate-400 max-w-md mx-auto md:mx-0 mb-8">
+        Based in Faridabad, India — passionate about turning data into insights and building practical, impactful digital solutions.
+      </p>
+
+      <div class="flex items-center justify-center md:justify-start gap-4 mb-8">
+        <a href="#projects" class="px-6 py-3 rounded-full gradient-bg text-white font-semibold hover:scale-105 transition shadow-lg shadow-brand-purple/30">View Work</a>
+        <a href="#contact" class="px-6 py-3 rounded-full border-2 border-slate-300 dark:border-white/20 font-semibold hover:border-brand-teal hover:text-brand-teal transition">Contact Me</a>
+      </div>
+
+      <div class="flex items-center justify-center md:justify-start gap-5">
+        <a href="https://github.com/NityaaDuttaa" target="_blank" class="w-11 h-11 rounded-full flex items-center justify-center bg-slate-100 dark:bg-white/10 hover:bg-brand-purple hover:text-white transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.5 0 12.3c0 5.44 3.44 10.05 8.21 11.68.6.12.82-.27.82-.6 0-.29-.01-1.05-.02-2.06-3.34.75-4.04-1.66-4.04-1.66-.55-1.44-1.34-1.82-1.34-1.82-1.1-.77.08-.76.08-.76 1.21.09 1.85 1.28 1.85 1.28 1.08 1.9 2.83 1.35 3.52 1.03.11-.8.42-1.35.76-1.66-2.67-.31-5.47-1.38-5.47-6.15 0-1.36.47-2.47 1.24-3.34-.12-.31-.54-1.57.12-3.28 0 0 1.01-.33 3.3 1.28a11.3 11.3 0 016 0c2.29-1.61 3.3-1.28 3.3-1.28.66 1.71.24 2.97.12 3.28.77.87 1.24 1.98 1.24 3.34 0 4.79-2.81 5.83-5.49 6.14.43.38.81 1.13.81 2.29 0 1.65-.02 2.98-.02 3.39 0 .33.22.72.83.6C20.57 22.34 24 17.74 24 12.3 24 5.5 18.63 0 12 0z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nitya-dutta-200340369/" target="_blank" class="w-11 h-11 rounded-full flex items-center justify-center bg-slate-100 dark:bg-white/10 hover:bg-brand-teal hover:text-white transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.59 0 4.25 2.36 4.25 5.43v6.31zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="mailto:nityadutta0104@gmail.com" class="w-11 h-11 rounded-full flex items-center justify-center bg-slate-100 dark:bg-white/10 hover:bg-brand-purple hover:text-white transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hidden md:flex justify-center animate-fade-up" style="animation-delay:0.2s;">
+      <div class="relative w-72 h-72 lg:w-80 lg:h-80">
+        <div class="absolute inset-0 rounded-full gradient-bg opacity-20 animate-float"></div>
+        <div class="absolute inset-4 rounded-full border-2 border-dashed border-brand-purple/40 animate-[spin_20s_linear_infinite]"></div>
+        <div class="absolute inset-8 rounded-full bg-slate-100 dark:bg-white/5 backdrop-blur flex items-center justify-center text-7xl font-black gradient-text border border-white/10 shadow-2xl">
+          ND
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-slate-400">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+  </a>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-brand-teal font-semibold tracking-widest text-sm mb-2">GET TO KNOW ME</p>
+      <h2 class="text-4xl font-extrabold">About <span class="gradient-text">Me</span></h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-white/10 p-8 bg-gradient-to-br from-brand-purple/10 to-brand-teal/10">
+          <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+            I'm <span class="font-semibold text-slate-800 dark:text-white">Nitya Dutta</span>, a data & AI enthusiast based in Faridabad, India. I love working with Python, Machine Learning, and SQL to solve real-world problems, and I enjoy building clean, functional web applications on the side.
+          </p>
+          <p class="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+            I'm constantly upskilling — from completing job simulations with Deloitte Australia to exploring generative AI tools through Google AI Essentials — and I bring strong communication and leadership skills to every team I work with.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-5 reveal">
+        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 card-hover">
+          <svg class="w-8 h-8 text-brand-purple mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
+          <h3 class="font-semibold mb-1">Location</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Faridabad, India</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 card-hover">
+          <svg class="w-8 h-8 text-brand-teal mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.42A12.083 12.083 0 0121 12v.5c0 3.5-4 6.5-9 6.5s-9-3-9-6.5V12a12.083 12.083 0 012.84-3.42L12 14z"/></svg>
+          <h3 class="font-semibold mb-1">Focus</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Data Analytics & ML</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 card-hover">
+          <svg class="w-8 h-8 text-brand-purple mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          <h3 class="font-semibold mb-1">Currently</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400">60-Day Claude AI Challenge</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 card-hover">
+          <svg class="w-8 h-8 text-brand-teal mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <h3 class="font-semibold mb-1">Email</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 break-all">nityadutta0104@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-24 px-6 bg-slate-50 dark:bg-white/[0.03]">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-brand-teal font-semibold tracking-widest text-sm mb-2">WHAT I BRING</p>
+      <h2 class="text-4xl font-extrabold">My <span class="gradient-text">Skills</span></h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 mb-16">
+      <div class="reveal">
+        <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><span class="w-2 h-6 gradient-bg rounded-full"></span>Technical Skills</h3>
+        <div class="space-y-5" id="skill-bars">
+          <div>
+            <div class="flex justify-between mb-1 text-sm font-medium"><span>Python</span><span>90%</span></div>
+            <div class="w-full h-2.5 bg-slate-200 dark:bg-white/10 rounded-full overflow-hidden"><div class="skill-bar-fill h-full gradient-bg rounded-full" data-width="90"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1 text-sm font-medium"><span>Machine Learning</span><span>80%</span></div>
+            <div class="w-full h-2.5 bg-slate-200 dark:bg-white/10 rounded-full overflow-hidden"><div class="skill-bar-fill h-full gradient-bg rounded-full" data-width="80"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1 text-sm font-medium"><span>SQL</span><span>85%</span></div>
+            <div class="w-full h-2.5 bg-slate-200 dark:bg-white/10 rounded-full overflow-hidden"><div class="skill-bar-fill h-full gradient-bg rounded-full" data-width="85"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1 text-sm font-medium"><span>JavaScript / Web Dev</span><span>75%</span></div>
+            <div class="w-full h-2.5 bg-slate-200 dark:bg-white/10 rounded-full overflow-hidden"><div class="skill-bar-fill h-full gradient-bg rounded-full" data-width="75"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><span class="w-2 h-6 gradient-bg rounded-full"></span>Tools & Soft Skills</h3>
+        <div class="flex flex-wrap gap-3 mb-8">
+          <span class="px-4 py-2 rounded-full bg-white dark:bg-white/10 border border-slate-200 dark:border-white/10 text-sm font-medium shadow-sm">VS Code</span>
+          <span class="px-4 py-2 rounded-full bg-white dark:bg-white/10 border border-slate-200 dark:border-white/10 text-sm font-medium shadow-sm">Jupyter Notebook</span>
+          <span class="px-4 py-2 rounded-full bg-white dark:bg-white/10 border border-slate-200 dark:border-white/10 text-sm font-medium shadow-sm">Power BI</span>
+          <span class="px-4 py-2 rounded-full bg-white dark:bg-white/10 border border-slate-200 dark:border-white/10 text-sm font-medium shadow-sm">Excel</span>
+          <span class="px-4 py-2 rounded-full bg-white dark:bg-white/10 border border-slate-200 dark:border-white/10 text-sm font-medium shadow-sm">Tableau</span>
+          <span class="px-4 py-2 rounded-full bg-white dark:bg-white/10 border border-slate-200 dark:border-white/10 text-sm font-medium shadow-sm">Git & GitHub</span>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <span class="px-4 py-2 rounded-full gradient-bg text-white text-sm font-medium shadow-sm">Leadership</span>
+          <span class="px-4 py-2 rounded-full gradient-bg text-white text-sm font-medium shadow-sm">Communication</span>
+          <span class="px-4 py-2 rounded-full gradient-bg text-white text-sm font-medium shadow-sm">Problem Solving</span>
+          <span class="px-4 py-2 rounded-full gradient-bg text-white text-sm font-medium shadow-sm">Team Collaboration</span>
+          <span class="px-4 py-2 rounded-full gradient-bg text-white text-sm font-medium shadow-sm">Adaptability</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-brand-teal font-semibold tracking-widest text-sm mb-2">MY WORK</p>
+      <h2 class="text-4xl font-extrabold">Featured <span class="gradient-text">Projects</span></h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="reveal rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 card-hover bg-white dark:bg-white/[0.03]">
+        <div class="h-40 gradient-bg flex items-center justify-center">
+          <svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold mb-2">NutriScope</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">A nutrition and food-tracking web application for managing profiles and logging food intake.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="text-xs px-3 py-1 rounded-full bg-brand-purple/10 text-brand-purple font-medium">HTML</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-brand-purple/10 text-brand-purple font-medium">CSS</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-brand-purple/10 text-brand-purple font-medium">JavaScript</span>
+          </div>
+          <a href="https://github.com/NityaaDuttaa" target="_blank" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-teal hover:gap-2 transition-all">View Project
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 card-hover bg-white dark:bg-white/[0.03]" style="transition-delay:0.1s;">
+        <div class="h-40 gradient-bg flex items-center justify-center">
+          <svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold mb-2">Password Generator</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">A React-based application that generates customizable and secure passwords.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="text-xs px-3 py-1 rounded-full bg-brand-teal/10 text-brand-teal font-medium">React</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-brand-teal/10 text-brand-teal font-medium">JavaScript</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-brand-teal/10 text-brand-teal font-medium">HTML/CSS</span>
+          </div>
+          <a href="https://github.com/NityaaDuttaa" target="_blank" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-teal hover:gap-2 transition-all">View Project
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 card-hover bg-white dark:bg-white/[0.03]" style="transition-delay:0.2s;">
+        <div class="h-40 gradient-bg flex items-center justify-center">
+          <svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold mb-2">Environmental Health Analyzer</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">An interactive dashboard for analyzing environmental health data through filters and visualizations.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="text-xs px-3 py-1 rounded-full bg-brand-purple/10 text-brand-purple font-medium">HTML</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-brand-purple/10 text-brand-purple font-medium">CSS</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-brand-purple/10 text-brand-purple font-medium">JavaScript</span>
+          </div>
+          <a href="https://github.com/NityaaDuttaa" target="_blank" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-teal hover:gap-2 transition-all">View Project
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="py-24 px-6 bg-slate-50 dark:bg-white/[0.03]">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-brand-teal font-semibold tracking-widest text-sm mb-2">RECOGNITION</p>
+      <h2 class="text-4xl font-extrabold">Achievements & <span class="gradient-text">Certifications</span></h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="reveal p-8 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 card-hover">
+        <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Deloitte Australia — Data Analytics</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Virtual job simulation via Forage, involving data analysis, Excel, Tableau, and forensic technology.</p>
+      </div>
+
+      <div class="reveal p-8 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 card-hover" style="transition-delay:0.1s;">
+        <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="font-bold text-lg mb-2">60-Day Claude AI Mastery Challenge</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400">ABTalks structured challenge focused on AI tools, prompt engineering, and practical project building.</p>
+      </div>
+
+      <div class="reveal p-8 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 card-hover" style="transition-delay:0.2s;">
+        <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.42A12.083 12.083 0 0121 12v.5c0 3.5-4 6.5-9 6.5s-9-3-9-6.5V12a12.083 12.083 0 012.84-3.42L12 14z"/></svg>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Google AI Essentials</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Coursework covering practical applications of generative AI and AI productivity tools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-brand-teal font-semibold tracking-widest text-sm mb-2">LET'S CONNECT</p>
+      <h2 class="text-4xl font-extrabold">Get In <span class="gradient-text">Touch</span></h2>
+      <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-lg mx-auto">Have an opportunity, project, or just want to say hi? My inbox is always open.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="reveal space-y-5">
+        <a href="mailto:nityadutta0104@gmail.com" class="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 card-hover">
+          <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold">Email</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400 break-all">nityadutta0104@gmail.com</p>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/nitya-dutta-200340369/" target="_blank" class="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 card-hover">
+          <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.59 0 4.25 2.36 4.25 5.43v6.31zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold">LinkedIn</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400">nitya-dutta-200340369</p>
+          </div>
+        </a>
+        <a href="https://github.com/NityaaDuttaa" target="_blank" class="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 card-hover">
+          <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.5 0 12.3c0 5.44 3.44 10.05 8.21 11.68.6.12.82-.27.82-.6 0-.29-.01-1.05-.02-2.06-3.34.75-4.04-1.66-4.04-1.66-.55-1.44-1.34-1.82-1.34-1.82-1.1-.77.08-.76.08-.76 1.21.09 1.85 1.28 1.85 1.28 1.08 1.9 2.83 1.35 3.52 1.03.11-.8.42-1.35.76-1.66-2.67-.31-5.47-1.38-5.47-6.15 0-1.36.47-2.47 1.24-3.34-.12-.31-.54-1.57.12-3.28 0 0 1.01-.33 3.3 1.28a11.3 11.3 0 016 0c2.29-1.61 3.3-1.28 3.3-1.28.66 1.71.24 2.97.12 3.28.77.87 1.24 1.98 1.24 3.34 0 4.79-2.81 5.83-5.49 6.14.43.38.81 1.13.81 2.29 0 1.65-.02 2.98-.02 3.39 0 .33.22.72.83.6C20.57 22.34 24 17.74 24 12.3 24 5.5 18.63 0 12 0z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold">GitHub</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400">NityaaDuttaa</p>
+          </div>
+        </a>
+        <div class="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+          <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold">Location</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Faridabad, India</p>
+          </div>
+        </div>
+      </div>
+
+      <form id="contact-form" class="reveal space-y-4 p-8 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+        <div>
+          <label class="text-sm font-medium mb-1 block">Name</label>
+          <input type="text" required class="w-full px-4 py-3 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-teal transition" placeholder="Your name">
+        </div>
+        <div>
+          <label class="text-sm font-medium mb-1 block">Email</label>
+          <input type="email" required class="w-full px-4 py-3 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-teal transition" placeholder="you@example.com">
+        </div>
+        <div>
+          <label class="text-sm font-medium mb-1 block">Message</label>
+          <textarea rows="4" required class="w-full px-4 py-3 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-teal transition" placeholder="Tell me about your project or opportunity..."></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 rounded-xl gradient-bg text-white font-semibold hover:scale-[1.02] transition shadow-lg shadow-brand-purple/30">Send Message</button>
+        <p id="form-success" class="hidden text-center text-brand-teal font-medium text-sm">✓ Thanks! Your message has been noted (this is a demo form).</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-8 px-6 border-t border-slate-200 dark:border-white/10 text-center">
+  <p class="text-sm text-slate-500 dark:text-slate-400">© <span id="year"></span> Nitya Dutta. Built with passion & Tailwind CSS.</p>
+</footer>
+
+<script>
+  // Theme toggle
+  const html = document.documentElement;
+  const themeToggle = document.getElementById('theme-toggle');
+  const iconSun = document.getElementById('icon-sun');
+  const iconMoon = document.getElementById('icon-moon');
+
+  function setTheme(dark) {
+    if (dark) {
+      html.classList.add('dark');
+      iconSun.classList.remove('hidden');
+      iconMoon.classList.add('hidden');
+    } else {
+      html.classList.remove('dark');
+      iconSun.classList.add('hidden');
+      iconMoon.classList.remove('hidden');
+    }
+  }
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setTheme(prefersDark);
+  themeToggle.addEventListener('click', () => setTheme(!html.classList.contains('dark')));
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+  }));
+
+  // Typing animation
+  const roles = ["Python Developer", "Machine Learning Enthusiast", "Data Analyst", "SQL Developer", "AI Explorer"];
+  let roleIndex = 0, charIndex = 0, deleting = false;
+  const typingEl = document.getElementById('typing-text');
+
+  function typeLoop() {
+    const current = roles[roleIndex];
+    if (!deleting) {
+      typingEl.textContent = current.slice(0, ++charIndex);
+      if (charIndex === current.length) { deleting = true; setTimeout(typeLoop, 1400); return; }
+    } else {
+      typingEl.textContent = current.slice(0, --charIndex);
+      if (charIndex === 0) { deleting = false; roleIndex = (roleIndex + 1) % roles.length; }
+    }
+    setTimeout(typeLoop, deleting ? 40 : 80);
+  }
+  typeLoop();
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // Skill bar animation
+  const skillBars = document.querySelectorAll('.skill-bar-fill');
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.width = entry.target.dataset.width + '%';
+      }
+    });
+  }, { threshold: 0.3 });
+  skillBars.forEach(bar => skillObserver.observe(bar));
+
+  // Active nav highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      if (scrollY >= sectionTop) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  });
+
+  // Navbar shadow on scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) navbar.classList.add('shadow-md');
+    else navbar.classList.remove('shadow-md');
+  });
+
+  // Contact form (demo, no backend)
+  const form = document.getElementById('contact-form');
+  const formSuccess = document.getElementById('form-success');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formSuccess.classList.remove('hidden');
+    form.reset();
+    setTimeout(() => formSuccess.classList.add('hidden'), 4000);
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
